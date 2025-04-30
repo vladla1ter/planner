@@ -1,4 +1,220 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: darkgrey;
 }
+.planner{
+    background-color: black;
+    border-radius: 20px;
+    height: 100vh;
+    width: 90vw;
+    padding:  20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.title {
+    /* Plans */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+}
+.text {
+    /* Check up your school grades */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #BCBCBC;
+
+
+}
+.schedule,.plans{
+    /* Rectangle 11 */
+width: 288px;
+height: 266px;
+background: rgba(163, 75, 185, 0.54);
+border-radius: 25px;
+padding: 20px;
+
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.block {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    
+}
+.homework,.grades {
+    height: 122px;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+    gap: 30px;
+
+}
+.homework{
+    background-color: #358E7C;
+}
+.grades{
+    background-color: #437980;
+}
+.search{
+    width: 288px;
+    height: 50px;
+    padding: 5px 10px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    gap:15px ;
+    margin-bottom:25px ;
+    margin-top: 10px;
+}
+.search-input{
+    border: none;
+    /* Search */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+background-color: aliceblue;
+color: #000000;
+width: 80%;
+
+
+
+}
+.name{
+   /* Student Planner */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+color: #FFFFFF;
+margin-top: -45px;
+
+
+
+}
+.top{
+    justify-content: space-between;
+    display: flex;
+}
+.new-task{
+    /* Rectangle 10 */
+background: #CF6060;
+border-radius: 25px;
+width: 288px;
+height: 171px;
+padding: 20px;
+margin-top: 50px;
+margin-bottom: 30px;
+
+
+}
+.calendar{
+    /* Rectangle 8 */
+background: #FFFFFF;
+border-radius: 14px;
+width: 255px;
+height: 127px;
+margin-top: 30px ;
+cursor: pointer;
+
+
+
+
+}
+.had-text{
+    
+    width: 500px;
+    color: white;
+}
+.img_calendar{
+    position: relative;
+    top: 20px ;
+    left: 20px;
+}
+.text-calendar{
+    position: relative;
+    top: 18px ;
+    left: 40px;
+    font-size: 25px;
+}
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10%);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    border-radius: 8px;
+}
+
+.hour {
+    width: 6px;
+    height: 80px;
+    background: #fff;
+}
+
+.minute {
+    width: 4px;
+    height: 110px;
+    background: #f0f0f0;
+}
+
+.second {
+    width: 2px;
+    height: 130px;
+    background: red;
+}
+
