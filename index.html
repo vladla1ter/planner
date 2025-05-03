@@ -3,70 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Planner</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <div class="planner">
     <h1 class="had-text">Student Planner</h1>
     <div class="top">
         <div class="calendar">
-            <img src="images/icons8-календарь-100 (1).png" class="img_calendar" >
+            <img src="images/icons8-календарь-100 (1).png" class="img_calendar">
             <p class="text-calendar">calendar</p>
         </div>
         <div class="clock">
             <div class="hand hour" id="hour-hand"></div>
-<div class="hand minute" id="minute-hand"></div>
-<div class="hand second" id="second-hand"></div>
-<div class="center"></div>
-
+            <div class="hand minute" id="minute-hand"></div>
+            <div class="hand second" id="second-hand"></div>
+            <div class="center"></div>
         </div>
         <div class="task">
-            <h1 class="name"> Vlad</h1>
+            <h1 class="name">Vlad</h1>
             <div class="search">
-                <img src="images/icons8-поиск-48 (1).png" >
-            <input type="text" class="search-input" placeholder="Search..."> </div>
-            <div class="new-task">
-                <img src="images/icons8-новая-веб-страница-48 (1).png" height="70px" >
-                <h3 class="title"> New task </h3>
-                <p class="text"> Create a new task  </p></div>
+                <img src="images/icons8-поиск-48 (1).png">
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+            <div class="new-task" id="add-task-btn">
+                <img src="images/icons8-новая-веб-страница-48 (1).png" height="70px">
+                <h3 class="title">New task</h3>
+                <p class="text">Create a new task</p>
+            </div>
         </div>
-
     </div>
     <div class="bottom">
-        <div class="schedule">
-            <img src="images/icons8-расписание-64 (1).png" class="schedule-img" >
-            <h3 class="title"> Schedule </h3>
-            <p class="text"> Your personal schedule </p>
+        <div class="schedule" id="schedule">
+            <img src="images/icons8-расписание-64 (1).png" class="schedule-img">
+            <h3 class="title">Schedule</h3>
+            <p class="text">Your personal schedule</p>
         </div>
         <div class="block">
-        <div class="homework">
-            <img src="images/icons8-домашнее-задание-48 (1).png" class="homework-img"  >
-        <div class="text-block">
-            <h3 class="title"> Homework</h3>
-            <p class="text"> Monitoring your home tasks </p>
+            <div class="homework" id="homework">
+                <img src="images/icons8-домашнее-задание-48 (1).png" class="homework-img">
+                <div class="text-block">
+                    <h3 class="title">Homework</h3>
+                    <p class="text">Monitoring your home tasks</p>
+                </div>
+            </div>
+            <div class="grades" id="grades">
+                <img src="images/icons8-оценки-48 (1).png" class="grades-img">
+                <div class="text-block">
+                    <h3 class="title">Grades</h3>
+                    <p class="text">Check up your school grades</p>
+                </div>
+            </div>
         </div>
-
+        <div class="plans" id="plans">
+            <img src="images/icons8-список-дел-64 (1).png" class="plans-img">
+            <h3 class="title">Plans</h3>
+            <p class="text">Write down your plans for the future</p>
         </div>
-        <div class="grades">
-            <img src="images/icons8-оценки-48 (1).png" class="grades-img"  >
-        <div class="text-block">
-            <h3 class="title"> Grades </h3>
-            <p class="text"> Check up your school grades </p>
-        </div>
-        </div>
-    </div>
-        <div class="plans">
-            <img src="images/icons8-список-дел-64 (1).png" class="plans-img" >
-            <h3 class="title"> Plans </h3>
-            <p class="text"> write down your plans
-                for the future </p>
-        </div>
-
     </div>
 </div>
 
-    <script src="script.js"></script>
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div class="modal-body">
+            <h2 id="modal-title"></h2>
+            <ul id="modal-content-list"></ul>
+            <form id="add-task-form" style="display: none;">
+                <label for="task-category">Category:</label>
+                <select id="task-category">
+                    <option value="schedule">Schedule</option>
+                    <option value="homework">Homework</option>
+                    <option value="grades">Grades</option>
+                    <option value="plans">Plans</option>
+                </select>
+                <label for="task-content">Content:</label>
+                <input type="text" id="task-content" placeholder="Enter task...">
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

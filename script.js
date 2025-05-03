@@ -24,3 +24,71 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 updateClock();
+
+// Локальное хранилище
+let tasks = JSON.parse(localStorage.getItem('tasks')) || {
+    schedule: [],
+    homework: [],
+    grades: [],
+    plans: []
+};
+
+// Элементы модального окна
+const modal = document.getElementById('modal');
+const modalContentList = document.getElementById('modal-content-list');
+const modalTitle = document.getElementById('modal-title');
+const addTaskForm = document.getElementById('add-task-form');
+const taskCategoryInput = document.getElementById('task-category');
+const taskContentInput = document.getElementById('task-content');
+const closeModal = document.getElementById('close-modal');
+
+// Функция для отображения модального окна с задачами
+function openModal(category) {
+    modal.style.display = 'block';
+    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    addTaskForm.style.display = 'none';
+    modalContentList.innerHTML = '';
+
+    tasks[category].forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = task;
+        modalContentList.appendChild(li);
+    });
+}
+
+// Функция для открытия формы добавления задачи
+function openAddTaskModal() {
+    modal.style.display = 'block';
+    modalTitle.textContent = 'Add New Task';
+    addTaskForm.style.display = 'block';
+    modalContentList.innerHTML = '';
+}
+
+// Обработчик формы добавления задачи
+addTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const category = taskCategoryInput.value;
+    const content = taskContentInput.value;
+
+    if (content.trim()) {
+        tasks[category].push(content);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        alert('Task added successfully!');
+        modal.style.display = 'none';
+        taskContentInput.value = '';
+    }
+});
+
+// Закрытие модального окна
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Добавление обработчиков для открытия модального окна с задачами
+document.getElementById('schedule').addEventListener('click', () => openModal('schedule'));
+document.getElementById('homework').addEventListener('click', () => openModal('homework'));
+document.getElementById('grades').addEventListener('click', () => openModal('grades'));
+document.getElementById('plans').addEventListener('click', () => openModal('plans'));
+
+// Добавление обработчика для кнопки добавления задач
+document.getElementById('add-task-btn').addEventListener('click', openAddTaskModal);
